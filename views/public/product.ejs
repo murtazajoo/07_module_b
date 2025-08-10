@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div>
+    <a href="?lang=en">En</a>/
+    <a href="?lang=fr">Fr</a>
+</div>
+
+    <h1>
+        <%= product.company.companyName %>
+    </h1>
+    <img src="<%= product.image %>" alt="">
+    <p><strong>GTIN:</strong> <%= product.gtin %></p>
+    <p><strong>Name:</strong> <%= product.name[lang] %></p>
+    <p><strong>Description:</strong> <%= product.description[lang]  %></p>
+    <p><strong>Weight:</strong> <%= product.weight.gross %>  <%= product.weight.unit %></p>
+    <p><strong>Net Content Weight:</strong> <%= product.weight.net %> <%= product.weight.unit %></p>
+
+    <script>
+        function changeLanguage(lang) {
+            // Logic to change the language
+            console.log("Language changed to:", lang);
+        }
+    </script>
+</body>
+</html>
